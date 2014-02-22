@@ -7,25 +7,32 @@
 	  xmlns:p="http://primefaces.org/ui">
 	  
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0"/>
 	<title>SGE</title>
-	<link rel="shortcut icon" href="resources/image/ico_sistema.ico" />
+	<link rel="shortcut icon" href="resource/image/ico_sistema.ico"/>
 </h:head>
 
 <h:body>
-	<h:outputStylesheet library="css" name="/principal.css" />
-	<h:outputStylesheet library="css" name="/ajustePrimefaceTheme.css" />
+	<h:outputStylesheet library="css" name="/main.css"/>
 	
 	<f:view>
-		<div id="envelope">
-			<div id="conteudo">
-				<center>
-					<ui:insert name="conteudo">
-						Conteudo principal
-					</ui:insert>
-				</center>	
+		<div id="wrapper">
+			<div id="top">
+				<ui:insert name="top">
+				</ui:insert>
+			</div>
+		
+			<div id="content">
+				<ui:insert name="content">
+					Conteudo principal
+				</ui:insert>
 			</div>		
+			
+			<div id="footer">
+				<ui:insert name="footer">
+				</ui:insert>
+			</div>
 		</div>	
 	</f:view>
 </h:body>
