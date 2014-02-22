@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0" />
+	<title>SGE</title>
+	<link rel="shortcut icon" href="resources/image/ico_sistema.ico" />
+</h:head>
+
+<h:body>
+	<h:outputStylesheet library="css" name="/principal.css" />
+	<h:outputStylesheet library="css" name="/ajustePrimefaceTheme.css" />
+	
+	<f:view>
+		<div id="envelope">
+			<div id="conteudo">
+				<center>
+					<ui:insert name="conteudo">
+						Conteudo principal
+					</ui:insert>
+				</center>	
+			</div>		
+		</div>	
+	</f:view>
+</h:body>
+
+</html>
