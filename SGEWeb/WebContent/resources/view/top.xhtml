@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:c="http://java.sun.com/jsp/jstl/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+	<div id="loginForm">
+		<h:form rendered="#{!userAcessMBean.logged}">
+	
+			<p:outputLabel for="login" value="#{msg.login}: "/>
+			<p:inputText id="login" value="#{userAcessMBean.login}"/>
+			
+			<p:outputLabel for="senha" value="#{msg.password}: " />
+			<p:password id="senha" value="#{userAcessMBean.password}"/>
+			
+			<p:commandButton value="#{msg.loginEnter}" action="#{userAcessMBean.logon}"/>
+				
+		</h:form>
+	</div>
+</ui:composition>
+</html>
