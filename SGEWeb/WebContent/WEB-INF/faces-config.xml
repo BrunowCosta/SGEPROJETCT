@@ -7,17 +7,16 @@
     version="2.1">
 
 	<application>        
-		<message-bundle>messages.message</message-bundle>
-		
+		<message-bundle>message.message</message-bundle>
+		<message-bundle>message.message_en</message-bundle>
 		<resource-bundle>
-			<base-name>messages.message</base-name>
+			<base-name>message.message</base-name>
 			<var>msg</var>
 		</resource-bundle>	
-		
 		<locale-config>            
-			<default-locale>pt</default-locale>    
+			<default-locale>pt_BR</default-locale>    
 			<supported-locale>en</supported-locale>
-		</locale-config>		
+		</locale-config>
 	</application>
-	
+
 </faces-config>
