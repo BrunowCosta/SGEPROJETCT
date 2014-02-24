@@ -3,11 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/resources/view/template.xhtml">
 <ui:define name="content">
+	<div id="loginForm">
+		<h:form rendered="#{!userAcessMBean.logged}">
+	
+			<h:outputLabel for="login" value="#{msg.login}: "/>
+			<h:inputText id="login" value="#{userAcessMBean.login}"/>
+			
+			<h:outputLabel for="senha" value="#{msg.password}: " />
+			<h:inputSecret id="senha" value="#{userAcessMBean.password}"/>
+			
+			<h:commandButton value="#{msg.loginEnter}" action="#{userAcessMBean.logon}"/>
+				
+		</h:form>
+	</div>
 </ui:define>
 </ui:composition>
 

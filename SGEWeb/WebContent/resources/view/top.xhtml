@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:c="http://java.sun.com/jsp/jstl/core"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <ui:composition>
-	<div id="loginForm">
-		<h:form rendered="#{!userAcessMBean.logged}">
-	
-			<p:outputLabel for="login" value="#{msg.login}: "/>
-			<p:inputText id="login" value="#{userAcessMBean.login}"/>
-			
-			<p:outputLabel for="senha" value="#{msg.password}: " />
-			<p:password id="senha" value="#{userAcessMBean.password}"/>
-			
-			<p:commandButton value="#{msg.loginEnter}" action="#{userAcessMBean.logon}"/>
-				
-		</h:form>
-	</div>
+
+<nav class="navigation-bar">
+    <nav class="navigation-bar-content">
+        <div class="element">
+            <a class="dropdown-toggle" href="#"><span class="icon-grid-view"/>METRO UI CSS</a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="#">Main</a></li>
+                <li><a href="#">File Open</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Print...</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Exit</a></li>
+            </ul>
+        </div>
+ 
+        <span class="element-divider"></span>
+        <a class="element brand" href="#"><span class="icon-spin"></span></a>
+        <a class="element brand" href="#"><span class="icon-printer"></span></a>
+        <span class="element-divider"></span>
+ 
+        <div class="element input-element">
+            <form>
+                <div class="input-control text">
+                    <input type="text" placeholder="Search..."/>
+                    <button class="btn-search"></button>
+                </div>
+            </form>
+        </div>
+ 
+        <div class="element place-right">
+            <a class="dropdown-toggle" href="#">
+                <span class="icon-cog"></span>
+            </a>
+            <ul class="dropdown-menu place-right" data-role="dropdown">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Download</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Buy Now</a></li>
+            </ul>
+        </div>
+        <span class="element-divider place-right"></span>
+        <a class="element place-right" href="#"><span class="icon-locked-2"></span></a>
+        <span class="element-divider place-right"></span>
+        <button class="element image-button image-left place-right">
+            Sergey Pimenov
+        </button>
+    </nav>
+</nav>
 </ui:composition>
 </html>

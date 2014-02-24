@@ -3,25 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:h="http://java.sun.com/jsf/html">
 	  
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0"/>
-	<h:outputStylesheet library="css" name="/main.css"/>
-<!-- 	<h:outputStylesheet library="css/metro" name="/metro-bootstrap.css"/> -->
-<!-- 	<h:outputStylesheet library="css/metro" name="/metro-bootstrap-responsive.css"/> -->
-<!-- 	<h:outputScript library="js/jquery" name="/jquery.min.js"/> -->
-<!-- 	<h:outputScript library="js/jquery" name="/jquery.widget.min.js"/> -->
-<!-- 	<h:outputScript library="js/metro" name="/metro.min.js"/> -->
+
+	<h:outputStylesheet library="css/metro" name="/metro-bootstrap.css"/>
+	<h:outputStylesheet library="css/metro" name="/metro-bootstrap-responsive.css"/>
+	<h:outputScript library="js/jquery" name="/jquery.min.js"/>
+	<h:outputScript library="js/jquery" name="/jquery.widget.min.js"/>
+	<h:outputScript library="js/metro" name="/metro.min.js"/>
 
 	<title>SGE</title>
 </h:head>
 
 <h:body class="metro">
 	
-	<div id="wrapper">
+	<div class="container">
 		<div id="top">
 			<ui:include src="top.xhtml"/>
 		</div>
@@ -35,6 +34,6 @@
 			<ui:include src="footer.xhtml"/>
 		</div>
 	</div>
+	
 </h:body>
-
 </html>
