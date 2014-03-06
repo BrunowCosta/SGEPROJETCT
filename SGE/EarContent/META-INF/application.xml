@@ -4,7 +4,7 @@
   <module>
     <web>
       <web-uri>SGEWeb.war</web-uri>
-      <context-root>SGEWeb</context-root>
+      <context-root>SGE</context-root>
     </web>
   </module>
   <module>

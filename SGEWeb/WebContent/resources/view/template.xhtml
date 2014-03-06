@@ -6,23 +6,25 @@
 	  xmlns:h="http://java.sun.com/jsf/html">
 	  
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0" />
 
-	<h:outputStylesheet library="css/metro" name="/metro-bootstrap.css"/>
-	<h:outputStylesheet library="css/metro" name="/metro-bootstrap-responsive.css"/>
-	<h:outputScript library="js/jquery" name="/jquery.min.js"/>
-	<h:outputScript library="js/jquery" name="/jquery.widget.min.js"/>
-	<h:outputScript library="js/metro" name="/metro.min.js"/>
+	<h:outputStylesheet library="css/metro" name="/metro-bootstrap.css" />
+	<h:outputStylesheet library="css/metro" name="/metro-bootstrap-responsive.css" />
+	<h:outputScript library="js/jquery" name="/jquery.min.js" />
+	<h:outputScript library="js/jquery" name="/jquery.widget.min.js" />
+	<h:outputScript library="js/metro" name="/metro.min.js" />
 
 	<title>SGE</title>
 </h:head>
 
 <h:body class="metro">
-	
+<f:view locale="#{internationalizationMBean.locale}">
+
+	<ui:debug/>
 	<div class="container">
 		<div id="top">
-			<ui:include src="top.xhtml"/>
+			<ui:include src="top.xhtml" />
 		</div>
 	
 		<div id="content">
@@ -31,9 +33,10 @@
 		</div>		
 		
 		<div id="footer">
-			<ui:include src="footer.xhtml"/>
+			<ui:include src="footer.xhtml" />
 		</div>
 	</div>
 	
+</f:view>
 </h:body>
 </html>

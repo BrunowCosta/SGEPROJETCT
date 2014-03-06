@@ -15,7 +15,8 @@
 		</resource-bundle>	
 		<locale-config>            
 			<default-locale>pt_BR</default-locale>    
-			<supported-locale>en</supported-locale>
+			<supported-locale>en_GB</supported-locale>
+			<supported-locale>de</supported-locale>
 		</locale-config>
 	</application>
 
