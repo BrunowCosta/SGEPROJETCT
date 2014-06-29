@@ -1,42 +1,45 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:c="http://java.sun.com/jsp/jstl/core">
+	  xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition>
 <h:form>
 <nav class="navigation-bar">
-<nav class="navigation-bar-content">
-
-	<div class="element place-right">
-		<a class="dropdown-toggle" href="#">
-			<span class="icon-cog"></span>
-		</a>
-		<ul class="dropdown-menu place-right" data-role="dropdown">
+	<nav class="navigation-bar-content">
+		<div class="element place-left">
+			<a class="dropdown-toggle" href="#"><span class="icon-rocket" />#{msg['module.public']}</a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="#">Main</a></li>
+                <li><a href="#">File Open</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Print...</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Exit</a></li>
+            </ul>
+		</div>
+	
+		<div class="element place-right">
+			<a class="dropdown-toggle" href="#">
+				<span class="icon-cog"></span>
+			</a>
+			<ul class="dropdown-menu place-right" data-role="dropdown">
 				<li class="menu-title"><h:outputText value="#{msg['menu.label.system']}" /></li>	
 				<li>
 					<a class="dropdown-toggle" href="#"><h:outputText value="#{msg['menu.option.language']}" /></a>
 					<ul class="dropdown-menu drop-left" data-role="dropdown">
-					
 						<ui:repeat value="#{internationalizationMBean.supportedCountries.keySet().toArray()}" var="key">
 							<li>
-								<h:commandLink actionListener="#{internationalizationMBean.changeLocale}">
-									<span class=""/>
+								<h:commandLink action="#{internationalizationMBean.changeLocale}">
+									<f:setPropertyActionListener target="#{internationalizationMBean.locale}" 
+											value="#{internationalizationMBean.supportedCountries.get(key)}" />
+									<span class="icon-#{internationalizationMBean.supportedCountries.get(key)}" />
+									<h:outputText value="#{key}" />
 								</h:commandLink>
 							</li>
 						</ui:repeat>
-						
-						<h:dataTable var="obj" value="#{internationalizationMBean.supportedCountries}">
-							<li>
-								<h:commandLink action="#{acessMBean.logout}">
-									<span class=""/>
-									<h:outputText value="#{msg['operation.logout']}" />
-								</h:commandLink>
-							</li>
-						</h:dataTable>
 					</ul>	
 				</li>
 				
@@ -46,9 +49,9 @@
 						<h:outputText value="#{msg['operation.logout']}" />
 					</h:commandLink>
 				</li>
-		</ul>
-	</div>
-</nav>
+			</ul>
+		</div>
+	</nav>
 </nav>
 </h:form>
 </ui:composition>

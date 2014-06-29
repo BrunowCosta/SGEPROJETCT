@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/resources/view/template.xhtml">
+<ui:define name="content">
+<div class="loginWrapper">
+	
+	<h:form styleClass="loginForm" rendered="#{!acessMBean.logged}">
+
+		<div class="input-control text size4">
+			<h:inputText value="#{acessMBean.login}" p:placeholder="#{msg['field.label.login']}" />
+			<button class="btn-clear" />
+		</div>
+		<br />
+		<div class="input-control password size4">
+			<h:inputSecret value="#{acessMBean.password}" p:placeholder="#{msg['field.label.password']}" />
+			<button class="btn-reveal" />
+		</div>
+		<br />
+		<small><h:commandLink value="#{msg['link.recoverAccount']}." /></small>
+		<br />
+		<small><h:commandLink value="#{msg['link.registerAcccount']}." /></small>
+		
+		<br /><br />
+		<h:commandButton styleClass="large" value="#{msg['operation.login']}" action="#{acessMBean.logon}" />
+	
+	</h:form>
+	
+	<div class="logo">
+		<h:graphicImage styleClass="polaroid bd-white shadow" url="/resources/image/layout/logo-church.png" />
+	</div>
+</div>
+</ui:define>
+</ui:composition>
+
+</html>

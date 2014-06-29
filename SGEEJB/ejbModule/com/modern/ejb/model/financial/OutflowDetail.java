@@ -1,4 +1,4 @@
-package model.financial;
+package com.modern.ejb.model.financial;
 
 import java.io.Serializable;
 import java.util.Calendar;

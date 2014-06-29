@@ -1,4 +1,4 @@
-package model.financial;
+package com.modern.ejb.model.financial;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -19,7 +19,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import model.User;
+import com.modern.ejb.model.User;
 
 @Entity
 @Table(name="T_SCHEDULEDOUTFLOW", schema="FINANCIAL")

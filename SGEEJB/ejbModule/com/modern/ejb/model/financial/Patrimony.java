@@ -1,8 +1,9 @@
-package model.financial;
+package com.modern.ejb.model.financial;
 
 import java.io.Serializable;
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,21 +16,21 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import model.User;
+import com.modern.ejb.model.User;
 
 @Entity
-@Table(name="T_CAPITALOINFLOW", schema="FINANCIAL")
-@SequenceGenerator(name="SEQ_ID_CAPITALINFLOW", sequenceName="SEQ_ID_CAPITALINFLOW", schema="FINANCIAL")
-public class CapitalInflow  implements Serializable {
+@Table(name="T_PATRIMONY", schema="FINANCIAL")
+@SequenceGenerator(name="SEQ_ID_PATRIMONY", sequenceName="SEQ_ID_PATRIMONY", schema="FINANCIAL")
+public class Patrimony implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 916387539858248864L;
+	private static final long serialVersionUID = 4142324471602457083L;
 
 	@Id
-	@Column(name="ID_CAPITALINFLOW")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID_CAPITALINFLOW")
+	@Column(name="ID_PATRIMONY")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_ID_PATRIMONY")
 	private Long id;
 	
 	@ManyToOne
@@ -47,12 +48,23 @@ public class CapitalInflow  implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar lastUpdateDate;
 	
-	private Double value;
-	
 	@Column(nullable=false)
 	private String description;
 	
-	public CapitalInflow(){}
+	@Temporal(TemporalType.DATE)
+	@Column(nullable=false)
+	private Calendar acquisitionDate;
+	
+	//TODO fazer as constrains.
+	private Integer state;
+	
+	private Double value;
+	
+	@ManyToOne(cascade=CascadeType.REFRESH)
+	@JoinColumn(name="FK_CAPITALOUTFLOW")
+	private CapitalOutflow capitalOutflow;
+	
+	public Patrimony(){}
 
 	public Long getId() {
 		return id;
@@ -94,6 +106,30 @@ public class CapitalInflow  implements Serializable {
 		this.lastUpdateDate = lastUpdateDate;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Calendar getAcquisitionDate() {
+		return acquisitionDate;
+	}
+
+	public void setAcquisitionDate(Calendar acquisitionDate) {
+		this.acquisitionDate = acquisitionDate;
+	}
+
+	public Integer getState() {
+		return state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
 	public Double getValue() {
 		return value;
 	}
@@ -102,12 +138,12 @@ public class CapitalInflow  implements Serializable {
 		this.value = value;
 	}
 
-	public String getDescription() {
-		return description;
+	public CapitalOutflow getCapitalOutflow() {
+		return capitalOutflow;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCapitalOutflow(CapitalOutflow capitalOutflow) {
+		this.capitalOutflow = capitalOutflow;
 	}
 	
 }

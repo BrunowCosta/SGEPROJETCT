@@ -1,21 +1,28 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  manifest="SGE.appcache">
 	  
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0" />
+	<title>SGE</title>
 
+	<meta charset="UTF-8" />
+	<meta name="author" content="Bruno Costa" />
+	<meta name="description" content="A web system to manage a church" />
+	<meta name="keywords" content="God, Church, Friendship, managing" />
+	
+	<link rel="shortcut icon" href="resources/image/layout/icon-church.png" />
+	
+	<h:outputStylesheet library="css" name="/main.css" />
+	
 	<h:outputStylesheet library="css/metro" name="/metro-bootstrap.css" />
 	<h:outputStylesheet library="css/metro" name="/metro-bootstrap-responsive.css" />
 	<h:outputScript library="js/jquery" name="/jquery.min.js" />
 	<h:outputScript library="js/jquery" name="/jquery.widget.min.js" />
 	<h:outputScript library="js/metro" name="/metro.min.js" />
-
-	<title>SGE</title>
 </h:head>
 
 <h:body class="metro">
@@ -23,18 +30,17 @@
 
 	<ui:debug/>
 	<div class="container">
-		<div id="top">
+		<header>
 			<ui:include src="top.xhtml" />
-		</div>
+		</header>
 	
-		<div id="content">
-			<ui:insert name="content">
-			</ui:insert>
+		<div class="content">
+			<ui:insert name="content"/>
 		</div>		
 		
-		<div id="footer">
+		<footer>
 			<ui:include src="footer.xhtml" />
-		</div>
+		</footer>
 	</div>
 	
 </f:view>

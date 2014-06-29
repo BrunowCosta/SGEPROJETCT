@@ -3,7 +3,8 @@ package managedBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import model.User;
+import com.modern.ejb.model.User;
+
 import util.JsfUtil;
 
 @ManagedBean(name="acessMBean")

@@ -14,33 +14,30 @@ import util.MessageBundleUtil;
 @SessionScoped
 public class InternationalizationMBean {
 	
-	private Map<String,Locale> supportedCountries;
+	private static Map<String,Locale> supportedCountries;
+	
+	static {
+		supportedCountries = new HashMap<String,Locale>();
+		supportedCountries.put("Português - Brasil", Locale.getDefault());
+		supportedCountries.put("English - UK", Locale.UK);
+		supportedCountries.put("Deutsch", Locale.GERMAN);
+		supportedCountries.put("Pусский", new Locale("ru"));
+	}
 	
 	private String locale;
 	
 	public InternationalizationMBean() {
-		this.chargeSupportedCountries();
 		this.locale = JsfUtil.getInstanse().getCurrentLocale().toString();
 	}
 
-	public void changeLocale() {
-//		String newLocaleValue = e.getNewValue().toString();
-		String newLocaleValue = this.locale;
-		for (Map.Entry<String, Locale> locale : this.supportedCountries.entrySet()) {
-		    if(locale.getValue().toString().equals(newLocaleValue)){
+	public String changeLocale() {
+		for (Map.Entry<String, Locale> locale : supportedCountries.entrySet()) {
+		    if(locale.getValue().toString().equals(this.locale)){
 		    	JsfUtil.getInstanse().setCurrentLocale(locale.getValue());
 		   	 	break;
 		    }
 		}
-		this.chargeSupportedCountries();
-	}
-	
-	//Defines locales supported by the app.
-	private void chargeSupportedCountries() {
-		this.supportedCountries = new HashMap<String,Locale>();
-		this.supportedCountries.put(MessageBundleUtil.getInstanse().getValue("locale.brazil"), Locale.getDefault());
-		this.supportedCountries.put(MessageBundleUtil.getInstanse().getValue("locale.uk"), Locale.UK);
-		this.supportedCountries.put(MessageBundleUtil.getInstanse().getValue("locale.ger"), Locale.GERMAN);
+		return null;
 	}
 		
 	public String getLocale() {
@@ -53,10 +50,6 @@ public class InternationalizationMBean {
 
 	public Map<String,Locale> getSupportedCountries() {
 		return supportedCountries;
-	}
-
-	public void setSupportedCountries(Map<String,Locale> supportedCountries) {
-		this.supportedCountries = supportedCountries;
 	}
 	
 }
