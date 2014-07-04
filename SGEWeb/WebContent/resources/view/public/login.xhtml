@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<ui:composition template="/resources/view/template.xhtml">
+<ui:define name="content">
+<div class="loginWrapper">
+	
+	<img class="logo polaroid bd-white shadow span6" jsf:url="/resources/image/layout/logo-church.png" />
+	
+	<form class="loginForm" jsf:id="loginForm">
+
+		<div class="input-control text size4">
+			<input type="text" jsf:value="#{acessMBean.login}" placeholder="#{msg['field.label.login']}" />
+			<button class="btn-clear" />
+		</div>
+		
+		<div class="input-control password size4">
+			<input type="password" jsf:value="#{acessMBean.password}" placeholder="#{msg['field.label.password']}" />
+			<button class="btn-reveal" />
+		</div>
+		
+		
+		<small><a>#{msg['link.recoverAccount']}.</a></small>
+		<small><a>#{msg['link.registerAcccount']}.</a></small>
+		
+		<button style="margin-top: 5px;" class="large" jsf:action="#{acessMBean.logon}">#{msg['operation.login']}</button>
+	
+	</form>
+
+</div>
+</ui:define>
+</ui:composition>
+
+</html>

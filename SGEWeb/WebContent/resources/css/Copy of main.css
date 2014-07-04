@@ -1,0 +1,65 @@
+@CHARSET "ISO-8859-1";
+
+.container {
+   min-height: 100%;
+   position: relative;
+}
+
+footer {
+	clear: both;
+	position: absolute;
+   	bottom: 0;
+	width: 100%;
+	height: 30px;   /* Height of the footer */
+	text-align: center;
+}
+
+
+.loginWrapper {
+	width: 780px;
+	height: 286px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top:-160px;
+	margin-left:-390px;
+}
+
+.loginWrapper .loginForm {
+	float: right;
+	width: 300px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%); 
+}
+
+.loginWrapper .logo {
+	float: left;
+}
+
+.error {
+	text-align: center;
+	padding-top: 5%;
+}
+
+.erro-stacktrace {
+	width: 90%;
+	margin: auto;
+}
+
+.metro .icon-pt_BR:before {
+  content: url('../resources/image/layout/icon-brazil.png');
+  margin: 1px;
+}
+.metro .icon-en_GB:before {
+  content: url('../resources/image/layout/icon-uk.png');
+   margin: 1px;
+}
+.metro .icon-de:before {
+  content: url('../resources/image/layout/icon-german.png');
+   margin: 1px;
+}
+.metro .icon-ru:before {
+  content: url('../resources/image/layout/icon-russia.png');
+   margin: 1px;
+}
