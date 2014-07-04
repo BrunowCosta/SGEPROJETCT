@@ -1,39 +1,36 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 <ui:composition template="/resources/view/template.xhtml">
 <ui:define name="content">
 <div class="loginWrapper">
 	
-	<h:form styleClass="loginForm" rendered="#{!acessMBean.logged}">
+	<img class="logo polaroid bd-white shadow span6" jsf:url="/resources/image/layout/logo-church.png" />
+	
+	<form class="loginForm" jsf:id="loginForm">
 
 		<div class="input-control text size4">
-			<h:inputText value="#{acessMBean.login}" p:placeholder="#{msg['field.label.login']}" />
+			<input type="text" jsf:value="#{acessMBean.login}" placeholder="#{msg['field.label.login']}" />
 			<button class="btn-clear" />
 		</div>
-		<br />
+		
 		<div class="input-control password size4">
-			<h:inputSecret value="#{acessMBean.password}" p:placeholder="#{msg['field.label.password']}" />
+			<input type="password" jsf:value="#{acessMBean.password}" placeholder="#{msg['field.label.password']}" />
 			<button class="btn-reveal" />
 		</div>
-		<br />
-		<small><h:commandLink value="#{msg['link.recoverAccount']}." /></small>
-		<br />
-		<small><h:commandLink value="#{msg['link.registerAcccount']}." /></small>
 		
-		<br /><br />
-		<h:commandButton styleClass="large" value="#{msg['operation.login']}" action="#{acessMBean.logon}" />
+		
+		<small><a>#{msg['link.recoverAccount']}.</a></small>
+		<small><a>#{msg['link.registerAcccount']}.</a></small>
+		
+		<button style="margin-top: 5px;" class="large" jsf:action="#{acessMBean.logon}">#{msg['operation.login']}</button>
 	
-	</h:form>
-	
-	<div class="logo">
-		<h:graphicImage styleClass="polaroid bd-white shadow" url="/resources/image/layout/logo-church.png" />
-	</div>
+	</form>
+
 </div>
 </ui:define>
 </ui:composition>

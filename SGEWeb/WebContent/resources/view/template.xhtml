@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:jsf="http://xmlns.jcp.org/jsf"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  manifest="SGE.appcache">
 	  
-<h:head>
+<head jsf:id="head">
 	<title>SGE</title>
 
 	<meta charset="UTF-8" />
@@ -14,18 +15,18 @@
 	<meta name="description" content="A web system to manage a church" />
 	<meta name="keywords" content="God, Church, Friendship, managing" />
 	
-	<link rel="shortcut icon" href="resources/image/layout/icon-church.png" />
+	<link rel="shortcut icon" href="#{request.contextPath}/resources/image/layout/icon-church.png" type="image/x-icon" />
 	
-	<h:outputStylesheet library="css" name="/main.css" />
+	<link jsf:library="css" jsf:name="/main.css" />
 	
-	<h:outputStylesheet library="css/metro" name="/metro-bootstrap.css" />
-	<h:outputStylesheet library="css/metro" name="/metro-bootstrap-responsive.css" />
+	<link jsf:library="css/metro" jsf:name="/metro-bootstrap.css" />
+	<link jsf:library="css/metro" jsf:name="/metro-bootstrap-responsive.css" />
 	<h:outputScript library="js/jquery" name="/jquery.min.js" />
 	<h:outputScript library="js/jquery" name="/jquery.widget.min.js" />
 	<h:outputScript library="js/metro" name="/metro.min.js" />
-</h:head>
+</head>
 
-<h:body class="metro">
+<body jsf:id="body" class="metro">
 <f:view locale="#{internationalizationMBean.locale}">
 
 	<ui:debug/>
@@ -44,5 +45,5 @@
 	</div>
 	
 </f:view>
-</h:body>
+</body>
 </html>

@@ -8,7 +8,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import util.JsfUtil;
-import util.MessageBundleUtil;
 
 @ManagedBean(name="internationalizationMBean")
 @SessionScoped

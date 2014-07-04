@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html">
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 <ui:composition>
-<h:form>
-<nav class="navigation-bar">
+<form jsf:id="form">
+<nav class="navigation-bar bg-emerald">
 	<nav class="navigation-bar-content">
 		<div class="element place-left">
 			<a class="dropdown-toggle" href="#"><span class="icon-rocket" />#{msg['module.public']}</a>
@@ -22,37 +22,40 @@
 		</div>
 	
 		<div class="element place-right">
-			<a class="dropdown-toggle" href="#">
-				<span class="icon-cog"></span>
-			</a>
+			<a class="dropdown-toggle" href="#"><span class="icon-cog"></span></a>
+			
 			<ul class="dropdown-menu place-right" data-role="dropdown">
-				<li class="menu-title"><h:outputText value="#{msg['menu.label.system']}" /></li>	
+				<li class="menu-title">#{msg['menu.label.system']}</li>	
 				<li>
-					<a class="dropdown-toggle" href="#"><h:outputText value="#{msg['menu.option.language']}" /></a>
+					<a class="dropdown-toggle" href="#">#{msg['menu.option.language']}</a>
 					<ul class="dropdown-menu drop-left" data-role="dropdown">
 						<ui:repeat value="#{internationalizationMBean.supportedCountries.keySet().toArray()}" var="key">
 							<li>
-								<h:commandLink action="#{internationalizationMBean.changeLocale}">
+								<a jsf:action="#{internationalizationMBean.changeLocale}">
 									<f:setPropertyActionListener target="#{internationalizationMBean.locale}" 
 											value="#{internationalizationMBean.supportedCountries.get(key)}" />
 									<span class="icon-#{internationalizationMBean.supportedCountries.get(key)}" />
-									<h:outputText value="#{key}" />
-								</h:commandLink>
+									#{key}
+								</a>
 							</li>
 						</ui:repeat>
 					</ul>	
 				</li>
 				
 				<li>
-					<h:commandLink action="#{acessMBean.logout}">
-						<span class="icon-exit"/>
-						<h:outputText value="#{msg['operation.logout']}" />
-					</h:commandLink>
+					<a jsf:action="#{acessMBean.logout}"><span class="icon-exit"/>#{msg['operation.logout']}</a>
 				</li>
 			</ul>
 		</div>
+		
+		<span class="element-divider place-right" />
+		<a class="element place-right" jsf:action="#{acessMBean.logon}" jsf:rendered="#{!acessMBean.logged}"><span class="icon-locked-2" />Login</a>
+		<button class="element image-button image-left place-right" jsf:rendered="#{acessMBean.logged}">
+			Bruno Costa
+			<img jsf:url="/resources/image/teste.jpg" />
+		</button>
 	</nav>
 </nav>
-</h:form>
+</form>
 </ui:composition>
 </html>

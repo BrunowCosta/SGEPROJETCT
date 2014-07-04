@@ -3,9 +3,9 @@ package managedBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import com.modern.ejb.model.User;
-
 import util.JsfUtil;
+
+import com.modern.ejb.model.User;
 
 @ManagedBean(name="acessMBean")
 @SessionScoped
@@ -17,15 +17,17 @@ public class AcessMBean {
 	
 	private String password;
 	
-	public AcessMBean(){}
+	public AcessMBean() {}
 	
-	public String logon(){
+	public String logon() {
+		User user = new User();
+		this.setUserLogged(user);
 		return null;
 	}
 
-	public String logout(){
+	public String logout() {
 		JsfUtil.getInstanse().invalidateSession();
-		return null;
+		return "index";
 	}
 	
 	public boolean isLogged(){
@@ -56,5 +58,10 @@ public class AcessMBean {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String gerarException() {
+		System.out.println(10/0);
+		return null;
 	}
 }
