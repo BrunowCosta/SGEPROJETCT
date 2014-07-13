@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<ui:composition template="/resources/view/template.xhtml">
+<ui:define name="content">
+<nav class="breadcrumbs mini">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Library</a></li>
+	<li class="active"><a href="#">Data</a></li>
+	</ul>
+</nav>
+
+<nav class="horizontal-menu">
+    <ul>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Download</a></li>
+    <li><a href="#">Support</a></li>
+    <li><a href="#">Buy Now</a></li>
+    </ul>
+</nav>
+
+<nav class="sidebar">
+    <ul>
+    <li class="title">Items Group 1</li>
+    <li class="active"><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+    <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Layouts</a></li>
+    <li class="stick bg-yellow">
+    <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Sub menu</a>
+    <ul class="dropdown-menu" data-role="dropdown">
+    <li><a href="">Subitem 1</a></li>
+    <li><a href="">Subitem 2</a></li>
+    <li><a href="">Subitem 3</a></li>
+    <li class="divider"></li>
+    <li><a href="">Subitem 4</a></li>
+    <li class="disabled"><a href="">Subitem 4</a></li>
+    </ul>
+    </li>
+    <li class="stick bg-green"><a href="#">Thread item</a></li>
+    <li class="disabled"><a href="#">Disabled item</a></li>
+     
+    <li class="title">Items Group 2</li>
+    <li><a href="#">Other Item 1</a></li>
+    <li><a href="#">Other item 2</a></li>
+    <li><a href="#">Other item 3</a></li>
+    <li>
+    <a class="dropdown-toggle" href="#">Sub menu 2</a>
+    <ul class="dropdown-menu" data-role="dropdown">
+    <li><a href="">Subitem 1</a></li>
+    <li><a href="">Subitem 2</a></li>
+    <li><a href="">Subitem 3</a></li>
+    </ul>
+    </li>
+    </ul>
+</nav>
+</ui:define>
+</ui:composition>
+</html>
