@@ -17,10 +17,10 @@ public class InternationalizationMBean {
 	
 	static {
 		supportedCountries = new HashMap<String,Locale>();
-		supportedCountries.put("Português - Brasil", Locale.getDefault());
+		supportedCountries.put("Portugu�s - Brasil", Locale.getDefault());
 		supportedCountries.put("English - UK", Locale.UK);
 		supportedCountries.put("Deutsch", Locale.GERMAN);
-		supportedCountries.put("Pусский", new Locale("ru"));
+		supportedCountries.put("Pyccknn", new Locale("ru"));
 	}
 	
 	private String locale;

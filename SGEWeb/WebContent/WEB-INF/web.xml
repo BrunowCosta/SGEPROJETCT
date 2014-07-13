@@ -9,7 +9,7 @@
 	
 	<!-- Configure the default page -->
 	<welcome-file-list>
-		<welcome-file>/resources/view/public/login.jsf</welcome-file>
+		<welcome-file>/resources/view/public/login.xhtml</welcome-file>
 	</welcome-file-list>
 		
 	<!-- Configure the JSF servlet -->
@@ -22,7 +22,7 @@
 	<!-- Configure the JSF pattern to process JSF pages -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.jsf</url-pattern>
+		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	
 	<!-- Mapping of the error pages -->

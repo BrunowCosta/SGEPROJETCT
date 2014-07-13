@@ -14,27 +14,20 @@ footer {
 	text-align: center;
 }
 
-
-.loginWrapper {
-	width: 780px;
-	height: 286px;
-	position: absolute;
-	top:50%;
-	left:50%;
-	margin-top:-160px;
-	margin-left:-390px;
+.sideBar {
+	float: left;
 }
 
-.loginWrapper .loginForm {
-	float: right;
-	width: 300px;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%); 
+.loginWrapper {
+	width: 70%;
 }
 
 .loginWrapper .logo {
 	float: left;
+}
+
+.loginForm {
+	width: 38%;
 }
 
 .error {

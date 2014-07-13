@@ -3,12 +3,15 @@ package managedBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.ocpsoft.rewrite.annotation.Join;
+
 import util.JsfUtil;
 
 import com.modern.ejb.model.User;
 
 @ManagedBean(name="acessMBean")
 @SessionScoped
+@Join(path="/login.html", to="/resources/view/public/login.xhtml")
 public class AcessMBean {
 	
 	private User userLogged;
@@ -58,10 +61,5 @@ public class AcessMBean {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	
-	public String gerarException() {
-		System.out.println(10/0);
-		return null;
 	}
 }
